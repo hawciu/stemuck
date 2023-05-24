@@ -1,9 +1,10 @@
+using Mirror;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : NetworkBehaviour
 {
     float speed = 5f;
 
@@ -16,6 +17,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isOwned)
+        {
+
+        }
         Vector3 moveDir = Vector3.zero;
         
         if (Input.GetKey(KeyCode.W))
